@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    app:cardElevation="2dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_height="85dp">
+
+    <LinearLayout
+        android:background="@drawable/round"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvBuy"
+            android:layout_width="wrap_content"
+            android:text="100 $"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginLeft="16sp"
+            android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/tvReason"
+            android:layout_width="wrap_content"
+            android:text="Reason"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginLeft="16sp"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
