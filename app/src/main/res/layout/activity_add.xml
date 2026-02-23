@@ -21,7 +21,7 @@
             android:id="@+id/addTv"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:text="Add Expense"
+            android:text="@string/add_expense"
             android:layout_gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
             android:id="@+id/buyDisplay"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:text="How much money do you want to spend to Buy?"
+            android:text="@string/how_much_money_do_you_want_to_spend_to_buy"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_height="wrap_content"/>
@@ -69,8 +69,9 @@
 
         <EditText
             android:id="@+id/edBuy"
+            android:autofillHints=""
             android:inputType="numberDecimal"
-            android:hint="5000"
+            android:hint="@string/_5000"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="#CB000000"
@@ -105,17 +106,18 @@
             android:id="@+id/reasonDisplay"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:text="How much money do you want to spend to Buy?"
+            android:text="@string/how_much_money_do_you_want_to_spend_to"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_height="wrap_content"/>
 
 
 
-        <EditText
+        <Spinner
             android:id="@+id/edReason"
+            android:autofillHints=""
             android:inputType="textPersonName"
-            android:hint="Reason"
+            android:hint="@string/reason"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="#CB000000"
@@ -149,7 +151,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:background="@drawable/round"
-        android:text="Add Expense to SQlite"
+        android:text="@string/add_expense_to_sqlite"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 

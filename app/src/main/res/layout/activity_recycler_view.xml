@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".RecyclerViewActivity">
 
-
     <androidx.cardview.widget.CardView
         app:cardBackgroundColor="@color/black"
         android:layout_width="match_parent"
@@ -18,30 +17,41 @@
             android:id="@+id/recyTv"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:text="Add Expense"
+            android:text="List"
             android:layout_gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_height="wrap_content"/>
-
     </androidx.cardview.widget.CardView>
 
-
-    <!-- SEARCH VIEW -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <!-- Горизонтальный контейнер для поиска и кнопки -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/search_view_bg"
-        app:queryHint="Search..."
-        app:iconifiedByDefault="false"/>
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:queryHint="Search..."
+            android:background="@drawable/search_view_bg" />
+
+        <ImageView
+            android:id="@+id/sortFilterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/ic_menu_three_lines"
+            android:contentDescription="Сортировка и фильтр" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_marginTop="6dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="6dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

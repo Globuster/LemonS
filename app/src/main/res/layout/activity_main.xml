@@ -18,7 +18,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Digital Money Bag"
+            android:text="Кошелек"
             android:layout_gravity="center"
             android:textColor="@color/green"
             android:textSize="18sp"
@@ -60,7 +60,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="Total Balance"
+                android:text="Баланс"
                 android:textSize="16sp"
                 android:textColor="#DDFFFFFF"
                 android:layout_height="wrap_content"/>
@@ -69,7 +69,7 @@
             <TextView
                 android:id="@+id/mainBalance"
                 android:layout_width="wrap_content"
-                android:text="BDT: 00.0"
+                android:text="00.0"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp"
@@ -117,7 +117,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="Total Expense"
+                android:text="Все расходы"
                 android:textSize="16sp"
                 android:textColor="#DDFFFFFF"
                 android:layout_height="wrap_content"/>
@@ -126,7 +126,7 @@
             <TextView
                 android:id="@+id/totalExpense"
                 android:layout_width="wrap_content"
-                android:text="BDT: 00.0"
+                android:text="00.0"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp"
@@ -152,17 +152,18 @@
                     android:id="@+id/addExpense"
                     android:layout_margin="8dp"
                     android:layout_width="wrap_content"
-                    android:text="Add Expense"
+                    android:text="Добавить"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:clickable="true"
+                    android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:background="@drawable/card_shape"
                     android:textColor="@color/black"
-                    android:layout_height="37dp"/>
+                    android:layout_height="48dp"/>
 
 
                 <TextView
@@ -170,16 +171,18 @@
                     android:id="@+id/expenseShow"
                     android:layout_margin="8dp"
                     android:layout_width="wrap_content"
-                    android:text="Show All Data"
+                    android:text="Показать"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
+                    android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:background="@drawable/card_shape"
                     android:textColor="@color/black"
-                    android:layout_height="37dp"/>
+                    android:layout_height="48dp"
+                    />
 
 
 
@@ -228,7 +231,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="Total Income"
+                android:text="Все доходы"
                 android:textSize="16sp"
                 android:textColor="#DDFFFFFF"
                 android:layout_height="wrap_content"/>
@@ -237,7 +240,7 @@
             <TextView
                 android:id="@+id/totalIncome"
                 android:layout_width="wrap_content"
-                android:text="BDT: 00.0"
+                android:text="00.0"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp"
@@ -262,7 +265,7 @@
                     android:id="@+id/addIncome"
                     android:layout_margin="8dp"
                     android:layout_width="wrap_content"
-                    android:text="Add Income"
+                    android:text="Добавить"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -270,10 +273,11 @@
                     android:layout_weight="1"
                     android:textStyle="bold"
                     android:clickable="true"
+                    android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:background="@drawable/card_shape"
                     android:textColor="@color/black"
-                    android:layout_height="37dp"/>
+                    android:layout_height="48dp"/>
 
 
                 <TextView
@@ -281,16 +285,17 @@
                     android:id="@+id/incomeShow"
                     android:layout_margin="8dp"
                     android:layout_width="wrap_content"
-                    android:text="Show All Data"
+                    android:text="Показать"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
+                    android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:background="@drawable/card_shape"
                     android:textColor="@color/black"
-                    android:layout_height="37dp"/>
+                    android:layout_height="48dp"/>
 
 
 

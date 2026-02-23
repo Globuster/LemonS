@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">LemonSoft Bag</string>
+    <string name="app_name">Lemon</string>
+    <string name="add_expense">Добавить расход</string>
+    <string name="how_much_money_do_you_want_to_spend_to_buy">Сколько денег вы хотите потратить на покупку?</string>
+    <string name="_5000">5000</string>
+    <string name="how_much_money_do_you_want_to_spend_to">На что вы хотите потратить ?</string>
+    <string name="reason">Причина</string>
+    <string name="add_expense_to_sqlite">Добавить расход</string>
 </resources>
