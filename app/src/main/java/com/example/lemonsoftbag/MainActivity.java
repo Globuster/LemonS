@@ -2,15 +2,19 @@ package com.example.lemonsoftbag;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    LinearLayout balanceHistory;
+    LinearLayout addExpense, addIncome, expenseShow, incomeShow;
 
-    TextView mainBalance, totalExpense, addExpense, expenseShow;
-    TextView totalIncome, addIncome, incomeShow;
+    TextView mainBalance, totalExpense;
+    TextView totalIncome;
 
     ExpenseSqlite sqlite;
 
@@ -19,9 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         sqlite = new ExpenseSqlite(this);
+
+        balanceHistory = findViewById(R.id.balanceHistory);
 
         mainBalance = findViewById(R.id.mainBalance);
 
@@ -32,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         totalIncome = findViewById(R.id.totalIncome);
         addIncome = findViewById(R.id.addIncome);
         incomeShow = findViewById(R.id.incomeShow);
+
+        balanceHistory.setOnClickListener(v -> {
+
+            Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+
+            // если хочешь передавать тип (доходы или расходы)
+            intent.putExtra("showAllHistory", true); // теперь будет загружаться полная история
+            startActivity(intent);
+        });
 
         // ADD EXPENSE
         addExpense.setOnClickListener(v -> {
@@ -47,14 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
         // SHOW EXPENSE LIST
         expenseShow.setOnClickListener(v -> {
-            RecyclerViewActivity.REC_VIEW = true;
-            startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+            Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+            intent.putExtra("isExpense", true); // передаем флаг расходов
+            startActivity(intent);
         });
 
-        // SHOW INCOME LIST
+// SHOW INCOME LIST
         incomeShow.setOnClickListener(v -> {
-            RecyclerViewActivity.REC_VIEW = false;
-            startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+            Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+            intent.putExtra("isExpense", false); // передаем флаг доходов
+            startActivity(intent);
         });
 
         showData();

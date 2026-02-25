@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomSheetLayout"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <!-- Сортировка -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сортировка"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/sortAscending"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Возрастание"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/sortDescending"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Убывание"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <!-- Период -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Период"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/periodToday"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Сегодня"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/periodWeek"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Неделя"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginHorizontal="4dp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/periodMonth"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Месяц"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <!-- Фильтр категорий -->
+    <TextView
+        android:id="@+id/categoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Категории"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/categoryContainer"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:layout_marginTop="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/filter1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Еда"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/filter2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Транспорт"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginHorizontal="2dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/filter3"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Развлечения"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginHorizontal="2dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/filter4"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Коммуналка"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+</LinearLayout>

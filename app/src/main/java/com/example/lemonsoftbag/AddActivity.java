@@ -20,6 +20,7 @@ public class AddActivity extends AppCompatActivity {
     ExpenseSqlite SQLiteOpenHelper;
 
     public static boolean EXPENSE = true;
+    private boolean isExpense;
 
     @SuppressLint({"SetTextI18n"})
     @Override
@@ -27,6 +28,8 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add);
+
+
 
         button = findViewById(R.id.button);
         edBuy = findViewById(R.id.edBuy);
@@ -36,10 +39,30 @@ public class AddActivity extends AppCompatActivity {
         reasonDisplay = findViewById(R.id.reasonDisplay);
         addTv = findViewById(R.id.addTv);
 
+
+        findViewById(R.id.btnFinish).setOnClickListener(v -> finish());
+
+
         SQLiteOpenHelper = new ExpenseSqlite(this);
+        int editId = getIntent().getIntExtra("editId", -1);
+        boolean isEdit = editId != -1;
+
+        if (isEdit) {
+            addTv.setText(isExpense ? "Редактировать расход" : "Редактировать доход");
+            button.setText(isExpense ? "Сохранить изменения" : "Сохранить изменения");
+
+            // Заполняем поля
+            double amount = getIntent().getDoubleExtra("amount", 0);
+            String reason = getIntent().getStringExtra("reason");
+
+            edBuy.setText(String.valueOf(amount));
+            int spinnerPos = ((ArrayAdapter<String>) edReason.getAdapter()).getPosition(reason);
+            edReason.setSelection(spinnerPos);
+        }
 
         // Определяем категории автоматически
         String[] categories;
+
 
         if (EXPENSE) {
             categories = new String[]{"Еда", "Транспорт", "Развлечения", "Коммуналка"};
@@ -59,36 +82,42 @@ public class AddActivity extends AppCompatActivity {
         // Меняем тексты в зависимости от режима
         if (EXPENSE) {
 
-            addTv.setText("Add Expense");
-            buyDisplay.setText("How much money do you want to spend?");
-            reasonDisplay.setText("What is the reason?");
-            button.setText("Add Expense");
+            addTv.setText("Добавить расход");
+            buyDisplay.setText("Сколько денег ты потратил на покупку?");
+            reasonDisplay.setText("По какой причине?");
+            button.setText("Добавить расход");
 
         } else {
 
-            addTv.setText("Add Income");
-            buyDisplay.setText("How much did you earn?");
-            reasonDisplay.setText("Where did you earn this money?");
-            button.setText("Add Income");
+            addTv.setText("Добавить доход");
+            buyDisplay.setText("Сколько дохода ты получил?");
+            reasonDisplay.setText("Откуда ты заработал?");
+            button.setText("Добавить доход");
         }
 
         // Кнопка добавления
         button.setOnClickListener(v -> {
-
             if (edBuy.length() > 0) {
-
                 String reason = edReason.getSelectedItem().toString();
                 double amount = Double.parseDouble(edBuy.getText().toString());
 
-                if (EXPENSE) {
-                    SQLiteOpenHelper.addExpense(amount, reason);
-                } else {
-                    SQLiteOpenHelper.addIncome(amount, reason);
+                if (isEdit) { // если мы редактируем существующую запись
+                    if (EXPENSE) {
+                        SQLiteOpenHelper.updateExpense(editId, amount, reason);
+                    } else {
+                        SQLiteOpenHelper.updateIncome(editId, amount, reason);
+                    }
+                    Toast.makeText(this, "Изменения сохранены", Toast.LENGTH_SHORT).show();
+                } else { // обычное добавление
+                    if (EXPENSE) {
+                        SQLiteOpenHelper.addExpense(amount, reason);
+                    } else {
+                        SQLiteOpenHelper.addIncome(amount, reason);
+                    }
+                    Toast.makeText(this, "Данные добавлены", Toast.LENGTH_SHORT).show();
                 }
 
-                edBuy.setText("");
-                Toast.makeText(this, "The data Successfully Added", Toast.LENGTH_LONG).show();
-
+                finish(); // закрываем activity
             } else {
                 Toast.makeText(this, "Amount is empty!", Toast.LENGTH_LONG).show();
             }

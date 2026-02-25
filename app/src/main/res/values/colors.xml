@@ -5,5 +5,8 @@
 
 
     <color name="green">#02784A</color>
+    <color name="plus">#85ba6a</color>
+    <color name="minus">#ed4255</color>
+
 
 </resources>
