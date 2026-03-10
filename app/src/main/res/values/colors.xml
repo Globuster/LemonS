@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#B1C7C7C7</color>
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="green">#02784A</color>
-    <color name="plus">#85ba6a</color>
-    <color name="minus">#ed4255</color>
+    <color name="green">#000000</color>
+    <color name="plus">#7C00FF00</color>
+    <color name="minus">#77FF0000</color>
 
 
 </resources>

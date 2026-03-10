@@ -56,7 +56,7 @@ public class ExpenseAdepter extends RecyclerView.Adapter<ExpenseAdepter.MyViewHo
         if ("expense".equals(model.getType())) {
             holder.tvBuy.setTextColor(Color.RED); // расходы красные
         } else if ("income".equals(model.getType())) {
-            holder.tvBuy.setTextColor(Color.GREEN); // доходы зелёные
+            holder.tvBuy.setTextColor(Color.BLUE); // доходы зелёные
         } else {
             holder.tvBuy.setTextColor(Color.WHITE); // на всякий случай
         }

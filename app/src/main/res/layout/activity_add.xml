@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Сколько денег потратил?"
-            android:textColor="@color/black"
+            android:textColor="@color/green"
             android:textSize="14sp"
             android:textStyle="bold"/>
 
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="По какой причине?"
-            android:textColor="@color/black"
+            android:textColor="@color/green"
             android:textSize="14sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"/>
@@ -83,7 +83,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/round"
             android:text="Добавить расход"
-            android:textColor="@color/white"
+            android:textColor="@color/green"
             android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="center"/>
